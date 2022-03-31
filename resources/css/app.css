@@ -1,0 +1,277 @@
+/*-------------------------
+General
+-------------------------*/
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@font-face {
+	font-family: 'ArgentCF';
+	src: url('fonts/ArgentCF-ThinItalic.eot');
+	src: url('fonts/ArgentCF-ThinItalic.woff2') format('woff2'),
+		 url('fonts/ArgentCF-ThinItalic.woff') format('woff'); 
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+button:disabled {
+	opacity: 0.5;
+}
+
+html {
+	scroll-padding-top: 150px;
+}
+
+
+
+/*-------------------------
+Statuses
+-------------------------*/
+.status-pill.status-pending-payment { background: #cf1b60; } 
+.status-pill.status-pending { background: #00c3ff; } 
+.status-pill.status-fulfilled { background: #4274d1; } 
+.status-pill.status-completed { background: #58a544; } 
+.status-pill.status-cancelled { background: #f12f2f; } 
+
+
+
+/*-------------------------
+Animations
+-------------------------*/
+a {
+	transition: all 0.3s ease;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity .5s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  	opacity: 0;
+}
+
+.hover\:grow {
+	transition: all 0.3s;
+	transform: scale(1);
+}
+
+.hover\:grow:hover {
+	transform: scale(1.02);
+}
+
+
+
+/*-------------------------
+Header
+-------------------------*/
+#menu-toggle:checked + #menu {
+	display: block;
+}
+
+/* menus borders */ 
+@media (min-width: 768px) {
+	.menu-border > ul > li > a:after {
+		display:block;
+		content: '';
+		border-bottom: solid 1px #A2AC9A;  
+		transform: scaleX(0);  
+		transition: transform 250ms ease-in-out;
+		transform-origin: 0% 50%;
+	}
+
+	.menu-border > ul > li > a:hover:after {
+		transform: scaleX(1);
+	}
+}
+
+/* mega menu */
+@media (min-width: 768px) {
+	.mega-menu {
+		display: none;
+		left: 0;
+		position: absolute;
+		text-align: left;
+		width: 100%;
+		z-index: 100;
+	}
+
+	.mega-menu-hover {
+		position: static;
+	}
+
+	.mega-menu-hover:hover .mega-menu {
+		display: block;
+	}
+}
+
+@media (min-width: 768px) {
+	.sub-menu {
+		display: none;
+		position: absolute;
+
+		top: 100%;
+		width: 300px;
+		padding: 20px;
+	}
+
+	.sub-menu-hover {
+		position: relative;
+	}
+
+	.sub-menu-hover:hover .sub-menu {
+		display: block;
+	}
+}
+
+
+
+/*-------------------------
+Home
+-------------------------*/
+.home-slide {
+	position: relative;
+	height: 50vh;
+}
+
+@media (min-width: 768px) {
+	.carousel-overlay {
+		width: 600px;
+		max-width: 80%;
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+
+
+
+/*-------------------------
+Newsletter
+-------------------------*/
+.na-image-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	z-index: 1;
+	background-color: rgba(242, 236, 230, 0.9);
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*-------------------------
+Newsletter
+-------------------------*/
+.bg-newsletter {
+	background-color: #F2ECE6;
+	background-image: url(/assets/symbol-white.svg);
+	background-size: auto 150%;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+
+
+
+/*-------------------------
+Swiper
+-------------------------*/
+#main .swiper-button-next,
+#main .swiper-button-prev {
+	background: #F2ECE6;
+	height: 60px;
+	width: 60px;
+	border-radius: 100%;
+	transition: all 0.3s ease;
+}
+
+#main .swiper-navigation-outside .swiper-button-prev {
+	left: -90px;
+}
+
+#main .swiper-navigation-outside .swiper-button-next {
+	right: -90px;
+}
+
+#main .swiper-button-next:after,
+#main .swiper-button-prev:after {
+    color: #000;
+    font-size: 20px;
+}
+
+#main .swiper-container-horizontal>.swiper-scrollbar {
+	background: #F2ECE6;
+    left: 0%;
+    bottom: 0px;
+    width: 100%;
+}
+
+#main .swiper-scrollbar-drag {
+	background: #AA947C
+}
+
+@media (max-width: 1700px) {
+	#main .swiper-navigation-outside .swiper-button-prev {
+		left: 0;
+	}
+	
+	#main .swiper-navigation-outside .swiper-button-next {
+		right: 0;
+	}
+}
+
+
+
+/*-------------------------
+Articles
+-------------------------*/
+.article-image {
+	padding-top: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+
+
+/*-------------------------
+Wysywig
+-------------------------*/
+.wysiwyg p {
+	@apply mb-4;
+}
+.wysiwyg strong {
+	@apply font-bold;
+}
+.wysiwyg a {
+	@apply text-secondary;
+}
+.wysiwyg h1 {
+	@apply font-serif text-4xl tracking-wider mb-4;
+}
+.wysiwyg h2 {
+	@apply font-serif text-3xl tracking-wider mb-4;
+}
+.wysiwyg h3 {
+	@apply font-serif text-2xl tracking-wider mb-4;
+}
+.wysiwyg h4 {
+	@apply uppercase text-sm tracking-wider mb-4;
+}
+.wysiwyg ul,
+.wysiwyg ol {
+	@apply pl-5 mb-4;
+}	
+.wysiwyg ul {
+	@apply list-disc;
+}
+.wysiwyg ol {
+	@apply list-decimal;
+}

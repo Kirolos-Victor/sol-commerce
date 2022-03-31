@@ -1,0 +1,49 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@inertiajs/inertia": "^0.8.4",
+        "@inertiajs/inertia-vue3": "^0.3.14",
+        "@inertiajs/progress": "^0.2.6",
+        "@tailwindcss/forms": "^0.2.1",
+        "@vue/compiler-sfc": "^3.2.22",
+        "alpinejs": "^2.7.3",
+        "autoprefixer": "^10.4.0",
+        "axios": "^0.21.4",
+        "laravel-mix": "^6.0.39",
+        "lodash": "^4.17.19",
+        "postcss": "^8.3.11",
+        "postcss-import": "^12.0.1",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.43.4",
+        "sass-loader": "^8.0.0",
+        "tailwindcss": "^2.2.19",
+        "vue": "^3.2.22",
+        "vue-loader": "^16.8.3",
+        "vue-template-compiler": "^2.6.14"
+    },
+    "dependencies": {
+        "@headlessui/vue": "^1.4.2",
+        "@vue-stripe/vue-stripe": "^4.2.8",
+        "add": "^2.0.6",
+        "mitt": "^2.1.0",
+        "moment": "^2.29.1",
+        "swiper": "^6.8.4",
+        "v-click-outside": "^3.1.2",
+        "vue-google-autocomplete": "^1.1.2",
+        "vue-instagram": "^2.0.1",
+        "vue-plugin-load-script": "^2.0.1",
+        "vue-star-rating": "^2.1.0",
+        "vue-use-stripe": "^0.1.1",
+        "vue3-click-away": "^1.2.1",
+        "vue3-datepicker": "^0.2.5"
+    }
+}
